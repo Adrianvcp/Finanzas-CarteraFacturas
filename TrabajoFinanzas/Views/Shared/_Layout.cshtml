@@ -1,0 +1,196 @@
+﻿@{
+
+    var tipo = 0; //0 = User; //1 = Admin
+    var estado = (Int32)Session["estado"];  // 0 = Principal 2= loginCorrectoAdmin 1= loginCorectoUser
+    var user = Session["userName"];
+}
+
+<!DOCTYPE html>
+<html>
+<head class="no-js" lang="">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Martxa || Home Three </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/png" href="~/images/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- bootstrap v3.3.7 css -->
+    <link rel="stylesheet" href="~/Scripts/css/bootstrap.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="~/Scripts/css/animate.css">
+    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+    <link rel="stylesheet" href="~/Scripts/css/owl.carousel.css">
+    <!-- font-awesome v4.6.3 css -->
+    <link rel="stylesheet" href="~/Scripts/css/font-awesome.min.css">
+    <!-- magnific-popup.css -->
+    <link rel="stylesheet" href="~/Scripts/css/magnific-popup.css">
+    <!-- slicknav.min.css -->
+    <link rel="stylesheet" href="~/Scripts/css/slicknav.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="~/Scripts/css/styles.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="~/Scripts/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
+
+
+</head>
+
+<body>
+    <header class="header-area header-area2">
+
+        <div class="header-bottom  bg-2" id="sticky-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-8 col-xs-6">
+                        <div class="logo">
+                            <h1><a href="index.html">Martxa</a></h1>
+                        </div>
+                    </div>
+                    <div class="col-md-8 hidden-sm hidden-xs">
+                        <div class="mainmenu">
+                            <ul id="navigation">
+                                <li class="active">
+                                     <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Home</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index","about")"><i class="fa fa-home"></i>About</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index","Login")"><i class="fa fa-home"></i>Login</a>
+                                </li>
+
+                                <li>
+                                    <a href="service.html">Cerrar Sesion <i class="fa fa-angle-down"></i></a>
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-2 col-xs-3">
+                        <div class="search-wrap text-right">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 clear col-xs-3 hidden-md hidden-lg">
+                        <div class="responsive-menu-wrap floatright"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div>
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".1s">
+                            <div class="footer-widget footer-logo">
+                                <h1>Martxa</h1>
+                                <p>Lor separat existentie es un myth. Por scientie, musica, sport etc, litot  usa li sam larLor separat existentie es un myth existentie.</p>
+                                <ul>
+                                    <li><i class="fa fa-phone"></i> +455 5475 6645</li>
+                                    <li><i class="fa fa-envelope"></i> info@yourdomail.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".2s">
+                            <div class="footer-widget footer-menu">
+                                <h2>Footer Menu</h2>
+                                <ul>
+                                    <li><a href="faq.html">Faq</a></li>
+                                    <li><a href="about.html">About us</a></li>
+                                    <li><a href="#">Customer Insights</a></li>
+                                    <li><a href="service.html">FInancial Service</a></li>
+                                    <li><a href="#">Business Devlopment</a></li>
+                                    <li><a href="">Project Management</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".3s">
+                            <div class="footer-widget instagram-wrap">
+                                <h2>Instagram</h2>
+                                <ul>
+                                    <li><a href="#"><img src="~/images/instagram/1.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="~/images/instagram/2.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="~/images/instagram/3.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="~/images/instagram/4.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="~/images/instagram/5.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="~/images/instagram/6.jpg" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
+                            <div class="footer-widget quick-contact">
+                                <h2>Quick Contact</h2>
+                                <form action="#">
+                                    <input type="text" placeholder="Full Name">
+                                    <input type="email" placeholder="Email">
+                                    <textarea name="massage" id="massage" cols="30" rows="10" placeholder="Massage"></textarea>
+                                    <button type="button" name="button" class="btn-style">Send</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" style="color: white;">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <!-- all js here -->
+        <!-- jquery latest version -->
+        <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
+        <!-- bootstrap js -->
+        <script src="~/js/bootstrap.min.js"></script>
+        <!-- owl.carousel.2.0.0-beta.2.4 css -->
+        <script src="~/js/owl.carousel.min.js"></script>
+        <!-- counterup.main.js -->
+        <script src="~/js/counterup.main.js"></script>
+        <!-- isotope.pkgd.min.js -->
+        <script src="~/js/imagesloaded.pkgd.min.js"></script>
+        <!-- isotope.pkgd.min.js -->
+        <script src="~/js/isotope.pkgd.min.js"></script>
+        <!-- jquery.waypoints.min.js -->
+        <script src="~/js/jquery.waypoints.min.js"></script>
+        <!-- jquery.magnific-popup.min.js -->
+        <script src="~/js/jquery.magnific-popup.min.js"></script>
+        <!-- jquery.slicknav.min.js -->
+        <script src="~/js/jquery.slicknav.min.js"></script>
+        <!-- snake.min.js -->
+        <script src="~/js/snake.min.js"></script>
+        <!-- wow js -->
+        <script src="~/js/wow.min.js"></script>
+        <!-- plugins js -->
+        <script src="~/js/plugins.js"></script>
+        <!-- main js -->
+        <script src="~/js/scripts.js"></script>
+    </div>
+
+</body>
+</html>
