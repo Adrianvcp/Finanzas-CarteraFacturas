@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="faq-area">
+    <div class="container">
+
+        <div class="col-md-6 col-xs-12 fadeInRight wow">
+            <div class="faq-form form-style">
+
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 fadeInRight wow">
+                        <div class="faq-form form-style">
+                            <div class="cf-msg"></div>
+
+
+                            @using (Html.BeginForm("Create", "Registro"))
+                            {
+                                <form action="#" method="post">
+                                    <div class="row">
+
+                                        <div class="col-xs-12">
+                                            <span>Nombre</span>
+                                            @Html.TextBox("name")
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <span>Apellidos</span>
+                                            @Html.TextBox("apellido")
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <span>DNI</span>
+                                            @Html.TextBox("dni")
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <span>RUC</span>
+                                            @Html.TextBox("ruc")
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <span>Telefono</span>
+                                            @Html.TextBox("telefono")
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <span>Direccion</span>
+                                            @Html.TextBox("direccion")
+                                        </div>
+
+                                        <div class="col-xs-12">
+                                            <span>Email</span>
+                                            @Html.TextBox("email")
+                                        </div>
+
+
+                                        <div class="col-xs-12">
+                                            <span>Contraseña</span>
+                                            @Html.Password("pass")
+                                        </div>
+
+
+
+                                        <input type="submit" value="Registrarse" />
+                                    </div>
+                                </form>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

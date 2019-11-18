@@ -51,6 +51,15 @@
     </Key>
     <Property Name="idUsuario" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="idNombre" />
+    </Key>
+    <Property Name="idNombre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prestigio" Type="int" Nullable="false" />
+    <Property Name="RUC" Type="nvarchar" MaxLength="11" Nullable="false" />
+  </EntityType>
   <EntityType Name="Frecuencia">
     <Key>
       <PropertyRef Name="idFrecuencia" />
@@ -95,6 +104,16 @@
     <Property Name="fechaInicio" Type="date" Nullable="false" />
     <Property Name="fechaFin" Type="date" Nullable="false" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="Usuario">
     <Key>
       <PropertyRef Name="idDNI" />
@@ -105,6 +124,11 @@
     <Property Name="NNombre" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="NApellido" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="Ntipo" Type="int" Nullable="false" />
+    <Property Name="RUC" Type="nvarchar" MaxLength="11" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="9" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="50" />
+    <Property Name="DNI" Type="nvarchar" MaxLength="8" />
+    <Property Name="idEmpresa" Type="int" />
   </EntityType>
   <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'bdFinanzass.dbo.nameBanco' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -239,6 +263,18 @@ advertencia 6002: La tabla o vista 'bdFinanzass.dbo.vwCarro' no tiene definida n
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Usuario_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="idNombre" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="idEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="leasing_Banco">
     <End Role="Banco" Type="Self.Banco" Multiplicity="1" />
     <End Role="leasing" Type="Self.leasing" Multiplicity="*" />
@@ -287,17 +323,50 @@ advertencia 6002: La tabla o vista 'bdFinanzass.dbo.vwCarro' no tiene definida n
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="bdFinanzassModelStoreContainer">
     <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Banco" EntityType="Self.Banco" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Banco_Promocion" EntityType="Self.Banco_Promocion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="carro" EntityType="Self.carro" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Frecuencia" EntityType="Self.Frecuencia" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="leasing" EntityType="Self.leasing" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PlazoGracia" EntityType="Self.PlazoGracia" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Promocion" EntityType="Self.Promocion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="nameBanco" EntityType="Self.nameBanco" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -353,6 +422,10 @@ advertencia 6002: La tabla o vista 'bdFinanzass.dbo.vwCarro' no tiene definida n
     <AssociationSet Name="Cliente_Usuario" Association="Self.Cliente_Usuario">
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Empresa" Association="Self.FK_Usuario_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Usuario" EntitySet="Usuario" />
     </AssociationSet>
     <AssociationSet Name="leasing_Banco" Association="Self.leasing_Banco">
       <End Role="Banco" EntitySet="Banco" />

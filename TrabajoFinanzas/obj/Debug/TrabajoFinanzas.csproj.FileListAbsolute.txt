@@ -48,6 +48,8 @@ C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\roslyn\vb
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\roslyn\VBCSCompiler.exe
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\Antlr3.Runtime.dll
+C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\EntityFramework.dll
+C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\EntityFramework.SqlServer.dll
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\Newtonsoft.Json.dll
@@ -59,6 +61,8 @@ C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\System.We
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\System.Web.WebPages.dll
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\System.Web.WebPages.Razor.dll
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\WebGrease.dll
+C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\EntityFramework.xml
+C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\EntityFramework.SqlServer.xml
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\System.Web.Helpers.xml
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\System.Web.Mvc.xml
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\System.Web.Optimization.xml
@@ -76,12 +80,8 @@ C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\es\System
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\es\System.Web.WebPages.resources.dll
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\obj\Debug\TrabajoFinanzas.csprojAssemblyReference.cache
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\obj\Debug\TrabajoFinanzas.csproj.CoreCompileInputs.cache
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\obj\Debug\TrabajoFinanzas.csproj.CopyComplete
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\obj\Debug\TrabajoFinanzas.dll
 C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\obj\Debug\TrabajoFinanzas.pdb
-C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\obj\Debug\TrabajoFinanzas.csprojAssemblyReference.cache
-C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\EntityFramework.dll
-C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\EntityFramework.SqlServer.dll
-C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\EntityFramework.xml
-C:\Users\pedro\OneDrive\Documentos\TrabajoFinanzas\TrabajoFinanzas\bin\EntityFramework.SqlServer.xml

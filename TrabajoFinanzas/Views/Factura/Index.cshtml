@@ -1,0 +1,98 @@
+﻿@model IEnumerable<TrabajoFinanzas.Models.Banco>
+
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+
+@using (Html.BeginForm("Simulador", "Factura"))
+{
+    <div class="container">
+        <div class="main-bothside">
+            <form action="#" method="post">
+
+                <link href="~/css/jquery-ui.css" rel="stylesheet" />
+
+
+                <div>
+                    <div class="form-mid-w3ls">
+                        <p>Entidad Financiera</p>
+                        @Html.DropDownList("NombreBando", new SelectList(ViewBag.data, "idBanco", "NombreBanco"))
+                    </div>
+                </div>
+
+
+                <h3>1.- TASA Y PLAZO</h3>
+                <div>
+                    <div class="form-mid-w3ls">
+                        <p>Dias de Año(todavia)</p>
+                        @Html.TextBox("diasAnio", "", new { @placeholder = "Numero de Años" })
+                    </div>
+                </div>
+
+                <div>
+                    <div class="form-mid-w3ls">
+                        <p>Plazo de tasa</p>
+                        @Html.DropDownList("fr", new SelectList(ViewBag.Frecuencia, "idFrecuencia", "NNombre"))
+                    </div>
+                </div>
+
+                <div>
+                    <div class="form-mid-w3ls">
+                        <p>Tasa Efectiva(falta agregar aca pero si lo utiliza)</p>
+                        @Html.Label("tea", "dsfs", new { @placeholder = "2%" })
+                    </div>
+                </div>
+
+                <div>
+                    <div class="form-mid-w3ls">
+                        <p>Fecha de Descuento</p>
+                        @Html.TextBox("fechaDescuento", "", new { @placeholder = "dd/mm/aaaa" })
+                    </div>
+                </div>
+
+
+
+                <h3>2.- DATOS DE LA FACTURA</h3>
+
+                <div>
+                    <div class="form-mid-w3ls">
+                        <p>Tipo de Moneda(Solo funciona soles)</p>
+                        @Html.TextBox("tipoMoneda", "", new { @placeholder = "S/." })
+                    </div>
+                </div>
+
+                <div>
+                    <div class="form-mid-w3ls">
+                        <p>Fecha de Emision(todavia)</p>
+                        @Html.TextBox("fechaEmision", "", new { @placeholder = "dd/mm/aaaa" })
+                    </div>
+                </div>
+
+                <div>
+                    <div class="form-mid-w3ls">
+                        <p>Fecha de Pago(todavia)</p>
+                        @Html.TextBox("fechaPago", "", new { @placeholder = "dd/mm/aaaa" })
+                    </div>
+                </div>
+
+                <div>
+                    <div class="form-mid-w3ls">
+                        <p>Total Facturado</p>
+                        @Html.TextBox("totalFacturado", "", new { @placeholder = "Total Facturado" })
+                    </div>
+                </div>
+
+
+
+
+
+
+                <input type="submit" value="Calcular" />
+            </form>
+        </div>
+    </div>
+}
+

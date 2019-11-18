@@ -2,6 +2,64 @@
     ViewBag.Title = "Index";
 }
 
+<body>
+
+    <!-- faq-area start -->
+    <div class="faq-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12  wow fadeInUp">
+                    <div class="section-title text-center">
+                        <h2>Frequently Asked Questions</h2>
+                        <p>The majority have suffered alteration in some form, by injected humour, or randomised. by injected humour, or randomised.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-xs-7  wow fadeInLeft">
+                    <div class="faq-wrap">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12 fadeInRight wow">
+                    <div class="faq-form form-style">
+                        <div class="cf-msg"></div>
+
+
+                        @using (Html.BeginForm("Sesion", "Login"))
+                        {
+                            <form action="#" method="post">
+                                <div class="row">
+
+                                    <div class="col-xs-12">
+                                        <span>Email</span>
+                                        @Html.TextBox("email")
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <span>Contraseña</span>
+                                        @Html.Password("pass")
+                                    </div>
+
+
+                                    <input type="submit" value="LogIn" />
+                                </div>
+                            </form>
+                        }
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+
+<body>
+
+
     <div class="faq-area">
         <div class="container">
 
@@ -14,33 +72,17 @@
                                 <div class="cf-msg"></div>
 
 
-                                    @using (Html.BeginForm("Sesion", "Login"))
-                                    {
-                                        <form action="#" method="post">
-                                            <div class="row">
-
-                                                <div class="col-xs-12">
-                                                    <span>Email</span>
-                                                    @Html.TextBox("email")
-                                                </div>
-                                                <div class="col-xs-12">
-                                                    <span>Contraseña</span>
-                                                    @Html.Password("pass")
-                                                </div>
-
-
-                                                <input type="submit" value="LogIn" />
-                                            </div>
-                                        </form>
-                                    }
-                                </div>
 
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+</body>
 
 
 

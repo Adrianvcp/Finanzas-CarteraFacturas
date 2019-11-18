@@ -4,20 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3175670dc69145e59e788e2c04d4724a" Name="Diagram1">
-        <EntityTypeShape EntityType="bdFinanzassModel.Administrador" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdFinanzassModel.Banco" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdFinanzassModel.Banco_Promocion" Width="1.5" PointX="7.5" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdFinanzassModel.carro" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdFinanzassModel.Cliente" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdFinanzassModel.Frecuencia" Width="1.5" PointX="8.25" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdFinanzassModel.leasing" Width="1.5" PointX="10.5" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdFinanzassModel.Marca" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdFinanzassModel.PlazoGracia" Width="1.5" PointX="7.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdFinanzassModel.Promocion" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdFinanzassModel.Usuario" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdFinanzassModel.nameBanco" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdFinanzassModel.vwCarro" Width="1.5" PointX="9.75" PointY="9.5" IsExpanded="true" />
+      <Diagram DiagramId="1fa3a4e0597d46fd8079d6881ea4d013" Name="Diagram1">
+        <EntityTypeShape EntityType="bdFinanzassModel.Administrador" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.Banco" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.Banco_Promocion" Width="1.5" PointX="9.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.carro" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.Cliente" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.Empresa" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.Frecuencia" Width="1.5" PointX="10.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.leasing" Width="1.5" PointX="12.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.Marca" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.PlazoGracia" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.Promocion" Width="1.5" PointX="7.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.sysdiagram" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.Usuario" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.nameBanco" Width="1.5" PointX="2.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.vwCarro" Width="1.5" PointX="9.75" PointY="2.5" IsExpanded="true" />
         <AssociationConnector Association="bdFinanzassModel.Administrador_Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="bdFinanzassModel.Banco_Administrador" ManuallyRouted="false" />
         <AssociationConnector Association="bdFinanzassModel.Banco_Promocion_Banco" ManuallyRouted="false" />
@@ -27,6 +29,7 @@
         <AssociationConnector Association="bdFinanzassModel.carro_Marca" ManuallyRouted="false" />
         <AssociationConnector Association="bdFinanzassModel.leasing_carro" ManuallyRouted="false" />
         <AssociationConnector Association="bdFinanzassModel.Cliente_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="bdFinanzassModel.FK_Usuario_Empresa" ManuallyRouted="false" />
         <AssociationConnector Association="bdFinanzassModel.leasing_Frecuencia" ManuallyRouted="false" />
         <AssociationConnector Association="bdFinanzassModel.leasing_Usuario" ManuallyRouted="false" />
       </Diagram>

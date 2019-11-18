@@ -39,9 +39,8 @@
 
 </head>
 
-<body>
-    <header class="header-area header-area2">
 
+    <header class="header-area">
         <div class="header-bottom  bg-2" id="sticky-header">
             <div class="container">
                 <div class="row">
@@ -53,20 +52,59 @@
                     <div class="col-md-8 hidden-sm hidden-xs">
                         <div class="mainmenu">
                             <ul id="navigation">
-                                <li class="active">
-                                     <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Home</a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("Index","about")"><i class="fa fa-home"></i>About</a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("Index","Login")"><i class="fa fa-home"></i>Login</a>
-                                </li>
 
-                                <li>
-                                    <a href="service.html">Cerrar Sesion <i class="fa fa-angle-down"></i></a>
 
-                                </li>
+                                @switch (estado)
+                                {
+                                    case 0:
+                                        <li class="active">
+                                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("About","Home")"><i class="fa fa-home"></i>About</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index","Registro")"><i class="fa fa-home"></i>Registro</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index","Login")"><i class="fa fa-home"></i>Login</a>
+                                        </li>
+                                        break;
+                                    case 1:
+                                        <li class="active">
+                                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("About","Home")"><i class="fa fa-home"></i>About</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="service.html">Facturas <i class="fa fa-angle-down"></i></a>
+
+                                        </li>
+                                        <li>
+
+                                            <a href="@Url.Action("CerrarSesion", "Home")"><i class="fa fa-cogs"></i>Salir</a>
+                                        </li>
+                                        break;
+                                    case 2:
+                                        <li class="active">
+                                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("About","Home")"><i class="fa fa-home"></i>About</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="@Url.Action("CerrarSesion", "Home")"><i class="fa fa-cogs"></i>Salir</a>
+
+                                        </li>
+                                        break;
+
+                                 }
+
+
+
 
                             </ul>
                         </div>
@@ -90,9 +128,9 @@
         </div>
     </header>
 
-    <div>
+    <body>
         @RenderBody()
-        <hr />
+        
         <footer>
             <div class="footer-top">
                 <div class="container">
@@ -190,7 +228,7 @@
         <script src="~/js/plugins.js"></script>
         <!-- main js -->
         <script src="~/js/scripts.js"></script>
-    </div>
+    </body>
 
-</body>
+
 </html>

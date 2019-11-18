@@ -63,6 +63,16 @@
     <Property Name="idUsuario" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Usuario" Relationship="Self.Cliente_Usuario" FromRole="Cliente" ToRole="Usuario" />
   </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="idNombre" />
+    </Key>
+    <Property Name="idNombre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Prestigio" Type="Int32" Nullable="false" />
+    <Property Name="RUC" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK_Usuario_Empresa" FromRole="Empresa" ToRole="Usuario" />
+  </EntityType>
   <EntityType Name="Frecuencia">
     <Key>
       <PropertyRef Name="idFrecuencia" />
@@ -114,6 +124,16 @@
     <Property Name="fechaFin" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="Banco_Promocion" Relationship="Self.Banco_Promocion_Promocion" FromRole="Promocion" ToRole="Banco_Promocion" />
   </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="Usuario">
     <Key>
       <PropertyRef Name="idDNI" />
@@ -124,8 +144,14 @@
     <Property Name="NNombre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="NApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Ntipo" Type="Int32" Nullable="false" />
+    <Property Name="RUC" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="Telefono" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DNI" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="idEmpresa" Type="Int32" />
     <NavigationProperty Name="Administrador" Relationship="Self.Administrador_Usuario" FromRole="Usuario" ToRole="Administrador" />
     <NavigationProperty Name="Cliente" Relationship="Self.Cliente_Usuario" FromRole="Usuario" ToRole="Cliente" />
+    <NavigationProperty Name="Empresa" Relationship="Self.FK_Usuario_Empresa" FromRole="Usuario" ToRole="Empresa" />
     <NavigationProperty Name="leasings" Relationship="Self.leasing_Usuario" FromRole="Usuario" ToRole="leasing" />
   </EntityType>
   <EntityType Name="nameBanco">
@@ -281,6 +307,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Usuario_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="idNombre" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="idEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="leasing_Frecuencia">
     <End Role="Frecuencia" Type="Self.Frecuencia" Multiplicity="1" />
     <End Role="leasing" Type="Self.leasing" Multiplicity="*" />
@@ -305,17 +343,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="bdFinanzassEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="bdFinanzassEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Administradors" EntityType="Self.Administrador" />
     <EntitySet Name="Bancoes" EntityType="Self.Banco" />
     <EntitySet Name="Banco_Promocion" EntityType="Self.Banco_Promocion" />
     <EntitySet Name="carroes" EntityType="Self.carro" />
     <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+    <EntitySet Name="Empresas" EntityType="Self.Empresa" />
     <EntitySet Name="Frecuencias" EntityType="Self.Frecuencia" />
     <EntitySet Name="leasings" EntityType="Self.leasing" />
     <EntitySet Name="Marcas" EntityType="Self.Marca" />
     <EntitySet Name="PlazoGracias" EntityType="Self.PlazoGracia" />
     <EntitySet Name="Promocions" EntityType="Self.Promocion" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
     <EntitySet Name="nameBancoes" EntityType="Self.nameBanco" />
     <EntitySet Name="vwCarroes" EntityType="Self.vwCarro" />
@@ -355,6 +395,10 @@
       <End Role="Usuario" EntitySet="Usuarios" />
       <End Role="Cliente" EntitySet="Clientes" />
     </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Empresa" Association="Self.FK_Usuario_Empresa">
+      <End Role="Empresa" EntitySet="Empresas" />
+      <End Role="Usuario" EntitySet="Usuarios" />
+    </AssociationSet>
     <AssociationSet Name="leasing_Frecuencia" Association="Self.leasing_Frecuencia">
       <End Role="Frecuencia" EntitySet="Frecuencias" />
       <End Role="leasing" EntitySet="leasings" />
@@ -363,5 +407,46 @@
       <End Role="Usuario" EntitySet="Usuarios" />
       <End Role="leasing" EntitySet="leasings" />
     </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(bdFinanzassModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(bdFinanzassModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
   </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
 </Schema>

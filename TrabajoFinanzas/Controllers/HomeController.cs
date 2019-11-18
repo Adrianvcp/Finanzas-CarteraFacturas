@@ -12,7 +12,7 @@ namespace TrabajoFinanzas.Controllers
         {
             return View();
         }
-
+         
 
         public ActionResult CerrarSesion()
         {
@@ -28,9 +28,8 @@ namespace TrabajoFinanzas.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+          
+            return View("About");
         }
 
         public ActionResult Contact()

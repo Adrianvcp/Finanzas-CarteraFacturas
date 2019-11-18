@@ -12,30 +12,20 @@ namespace TrabajoFinanzas.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario
+    public partial class Empresa
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuario()
+        public Empresa()
         {
-            this.leasings = new HashSet<leasing>();
+            this.Usuarios = new HashSet<Usuario>();
         }
     
-        public int idDNI { get; set; }
-        public string Email { get; set; }
-        public string password { get; set; }
-        public string NNombre { get; set; }
-        public string NApellido { get; set; }
-        public int Ntipo { get; set; }
+        public int idNombre { get; set; }
+        public string Nombre { get; set; }
+        public int Prestigio { get; set; }
         public string RUC { get; set; }
-        public string Telefono { get; set; }
-        public string Direccion { get; set; }
-        public string DNI { get; set; }
-        public Nullable<int> idEmpresa { get; set; }
     
-        public virtual Administrador Administrador { get; set; }
-        public virtual Cliente Cliente { get; set; }
-        public virtual Empresa Empresa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<leasing> leasings { get; set; }
+        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }
