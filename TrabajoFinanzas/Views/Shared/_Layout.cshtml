@@ -10,7 +10,7 @@
 <head class="no-js" lang="">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Martxa || Home Three </title>
+    <title>UPC Factoring </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -36,17 +36,15 @@
     <!-- modernizr css -->
     <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
 
-
 </head>
 
-
-    <header class="header-area">
+    <header class="header-area ">
         <div class="header-bottom  bg-2" id="sticky-header">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-8 col-xs-6">
                         <div class="logo">
-                            <h1><a href="index.html">Martxa</a></h1>
+                            <h1><a href="@Url.Action("Index","Home")">UPC Factoring</a></h1>
                         </div>
                     </div>
                     <div class="col-md-8 hidden-sm hidden-xs">
@@ -58,50 +56,50 @@
                                 {
                                     case 0:
                                         <li class="active">
-                                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Home</a>
+                                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Inicio</a>
                                         </li>
                                         <li>
-                                            <a href="@Url.Action("About","Home")"><i class="fa fa-home"></i>About</a>
+                                            <a href="@Url.Action("About","Home")">Sobre nosotros</a>
                                         </li>
                                         <li>
-                                            <a href="@Url.Action("Index","Registro")"><i class="fa fa-home"></i>Registro</a>
+                                            <a href="@Url.Action("Index","Registro")">Registrarse</a>
                                         </li>
                                         <li>
-                                            <a href="@Url.Action("Index","Login")"><i class="fa fa-home"></i>Login</a>
+                                            <a href="@Url.Action("Index","Login")">Iniciar Sesión</a>
                                         </li>
                                         break;
                                     case 1:
                                         <li class="active">
-                                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Home</a>
+                                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Inicio</a>
                                         </li>
                                         <li>
-                                            <a href="@Url.Action("About","Home")"><i class="fa fa-home"></i>About</a>
+                                            <a href="@Url.Action("About","Home")">Sobre nosotros</a>
                                         </li>
 
                                         <li>
-                                            <a href="service.html">Facturas <i class="fa fa-angle-down"></i></a>
+                                            <a href="service.html">Facturas</a>
 
                                         </li>
                                         <li>
 
-                                            <a href="@Url.Action("CerrarSesion", "Home")"><i class="fa fa-cogs"></i>Salir</a>
+                                            <a href="@Url.Action("CerrarSesion", "Home")">Salir</a>
                                         </li>
                                         break;
                                     case 2:
                                         <li class="active">
-                                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Home</a>
+                                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Inicio</a>
                                         </li>
                                         <li>
-                                            <a href="@Url.Action("About","Home")"><i class="fa fa-home"></i>About</a>
+                                            <a href="@Url.Action("About","Home")">Sobre nosotros</a>
                                         </li>
 
                                         <li>
-                                            <a href="@Url.Action("CerrarSesion", "Home")"><i class="fa fa-cogs"></i>Salir</a>
+                                            <a href="@Url.Action("CerrarSesion", "Home")">Salir</a>
 
                                         </li>
                                         break;
 
-                                 }
+                                }
 
 
 
@@ -109,17 +107,19 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-1 col-sm-2 col-xs-3">
-                        <div class="search-wrap text-right">
-                            <ul>
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <i class="fa fa-search"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <!--
+    <div class="col-md-1 col-sm-2 col-xs-3">
+        <div class="search-wrap text-right">
+            <ul>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+        -->
                     <div class="col-sm-2 clear col-xs-3 hidden-md hidden-lg">
                         <div class="responsive-menu-wrap floatright"></div>
                     </div>
@@ -132,13 +132,13 @@
         @RenderBody()
         
         <footer>
-            <div class="footer-top">
-                <div class="container">
+            <div class="footer-top ptb-100">
+                <div class="container ">
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".1s">
                             <div class="footer-widget footer-logo">
-                                <h1>Martxa</h1>
-                                <p>Lor separat existentie es un myth. Por scientie, musica, sport etc, litot  usa li sam larLor separat existentie es un myth existentie.</p>
+                                <h1>UPC Factoring</h1>
+                                <p>Somos una empresa dedicada a simular y personalizar tus necesidades de facturacion entre las principales agencias bancarias</p>
                                 <ul>
                                     <li><i class="fa fa-phone"></i> +455 5475 6645</li>
                                     <li><i class="fa fa-envelope"></i> info@yourdomail.com</li>
@@ -147,14 +147,12 @@
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".2s">
                             <div class="footer-widget footer-menu">
-                                <h2>Footer Menu</h2>
+                                <h2>Menu</h2>
                                 <ul>
-                                    <li><a href="faq.html">Faq</a></li>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="#">Customer Insights</a></li>
-                                    <li><a href="service.html">FInancial Service</a></li>
-                                    <li><a href="#">Business Devlopment</a></li>
-                                    <li><a href="">Project Management</a></li>
+                                    <li><a href="@Url.Action("Index","Home")">Inicio</a></li>
+                                    <li><a href="@Url.Action("About","Home")">Sobre nosotros</a></li>
+                                    <li><a href="@Url.Action("Index","Registro")">Registrarse</a></li>
+                                    <li><a href="@Url.Action("Index","Login")">Iniciar Sesion</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -162,15 +160,16 @@
                             <div class="footer-widget instagram-wrap">
                                 <h2>Instagram</h2>
                                 <ul>
-                                    <li><a href="#"><img src="~/images/instagram/1.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="~/images/instagram/2.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="~/images/instagram/3.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="~/images/instagram/4.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="~/images/instagram/5.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="~/images/instagram/6.jpg" alt=""></a></li>
+                                    <li><img src="~/images/instagram/1.jpg" alt=""></li>
+                                    <li><img src="~/images/instagram/2.jpg" alt=""></li>
+                                    <li><img src="~/images/instagram/3.jpg" alt=""></li>
+                                    <li><img src="~/images/instagram/4.jpg" alt=""></li>
+                                    <li><img src="~/images/instagram/5.jpg" alt=""></li>
+                                    <li><img src="~/images/instagram/6.jpg" alt=""></li>
                                 </ul>
                             </div>
                         </div>
+                        <!--
                         <div class="col-md-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".4s">
                             <div class="footer-widget quick-contact">
                                 <h2>Quick Contact</h2>
@@ -182,6 +181,7 @@
                                 </form>
                             </div>
                         </div>
+                        -->
                     </div>
                 </div>
             </div>

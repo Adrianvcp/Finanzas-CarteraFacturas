@@ -2,7 +2,7 @@
     ViewBag.Title = "Index";
 }
 
-<div class="faq-area">
+<div class="faq-area area ptb-80">
     <div class="container">
 
         <div class="col-md-6 col-xs-12 fadeInRight wow">
@@ -14,51 +14,119 @@
                             <div class="cf-msg"></div>
 
 
-                            @using (Html.BeginForm("Create", "Registro"))
-                            {
+                            @using (Html.BeginForm("Create", "Registro")) { 
+
                                 <form action="#" method="post">
-                                    <div class="row">
+                                    <p>
+                                        <label for="name">Nombre:</label>
+                                        <input type="text" name="name" id="name">
+                                        <br />
 
-                                        <div class="col-xs-12">
-                                            <span>Nombre</span>
-                                            @Html.TextBox("name")
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span>Apellidos</span>
-                                            @Html.TextBox("apellido")
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span>DNI</span>
-                                            @Html.TextBox("dni")
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span>RUC</span>
-                                            @Html.TextBox("ruc")
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span>Telefono</span>
-                                            @Html.TextBox("telefono")
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span>Direccion</span>
-                                            @Html.TextBox("direccion")
-                                        </div>
+                                        <label for="dni">DNI:</label>
+                                        <input type="number" name="dni" id="dni">
 
-                                        <div class="col-xs-12">
-                                            <span>Email</span>
-                                            @Html.TextBox("email")
-                                        </div>
+                                        <br />
 
+                                        <label for="ruc">RUC:</label>
+                                        <input type="number" name="ruc" id="ruc">
+                                        <br />
 
-                                        <div class="col-xs-12">
-                                            <span>Contraseña</span>
-                                            @Html.Password("pass")
-                                        </div>
+                                        <label for="telefono">Teléfono:</label>
+                                        <input type="number" name="telefono" id="telefono">
+                                        <br />
 
+                                        <label for="direccion">Dirección:</label>
+                                        <input type="text" name="direccion" id="direccion">
+                                        <br />
 
+                                        <label for="email">Email:</label>
+                                        <input type="email" name="email" id="email">
+                                        <br />
+
+                                        <label for="email">Contraseña:</label>
+                                        <input type="password" name="email" id="email">
+                                        <br />
 
                                         <input type="submit" value="Registrarse" />
-                                    </div>
+                                    </p>
+                                    
+
+                                    <!--
+            form action = "Create" method = "post" >
+
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name">
+            <br />
+
+            <label for="dni">DNI:</label>
+            <input type="number" name="dni" id="dni">
+            <br />
+
+            <label for="ruc">RUC:</label>
+            <input type="number" name="ruc" id="ruc">
+            <br />
+
+            <label for="telefono">Teléfono:</label>
+            <input type="number" name="telefono" id="telefono">
+            <br />
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" name="direccion" id="direccion">
+            <br />
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+            <br />
+
+            <label for="email">Contraseña:</label>
+            <input type="password" name="email" id="email">
+            <br />
+
+            <input type="submit" value="Registrarse" />
+            </form>
+                -->
+                                    <!--
+            <div class="row">
+
+                <div class="col-xs-12">
+                    <span>Nombre</span>
+                    @Html.TextBox("name")
+                </div>
+                <div class="col-xs-12">
+                    <span>DNI</span>
+                    @Html.TextBox("dni")
+                </div>
+
+                <div class="col-xs-12">
+                    <span>Nombre</span>
+                    @Html.TextBox("name")
+                </div>
+                <div class="col-xs-12">
+                    <span>DNI</span>
+                    @Html.TextBox("dni")
+                </div>
+                <div class="col-xs-12">
+                    <span>RUC</span>
+                    @Html.TextBox("ruc")
+                </div>
+                <div class="col-xs-12">
+                    <span>Telefono</span>
+                    @Html.TextBox("telefono")
+                </div>
+                <div class="col-xs-12">
+                    <span>Direccion</span>
+                    @Html.TextBox("direccion")
+                </div>
+                <div class="col-xs-12">
+                    <span>Email</span>
+                    @Html.TextBox("email")
+                </div>
+                <div class="col-xs-12">
+                    <span>Contraseña</span>
+                    @Html.Password("pass")
+                </div>
+                -->
+
                                 </form>
                             }
                         </div>

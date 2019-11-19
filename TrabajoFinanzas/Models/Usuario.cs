@@ -11,7 +11,9 @@ namespace TrabajoFinanzas.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel;
+
     public partial class Usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,14 +23,31 @@ namespace TrabajoFinanzas.Models
         }
     
         public int idDNI { get; set; }
+
+        [Required(ErrorMessage = "Ingrese email valido")]
+        [RegularExpression(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", ErrorMessage = "Por favor ingrese un email valido")]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "Por favor ingrese la contraseña")]
         public string password { get; set; }
+
+        [Required(ErrorMessage = "Por favor ingrese el nombre del usuario")]
         public string NNombre { get; set; }
+
+        [Required(ErrorMessage = "Por favor ingrese el apellido del usuario")]
         public string NApellido { get; set; }
         public int Ntipo { get; set; }
+
+        [Required(ErrorMessage = "Por favor ingrese el RUC")]
         public string RUC { get; set; }
+
+        [Required(ErrorMessage = "Por favor ingrese el numero telefónico")]
         public string Telefono { get; set; }
+
+        [Required(ErrorMessage = "Por favor ingrese su direccion")]
         public string Direccion { get; set; }
+
+        [Required(ErrorMessage = "Por favor ingrese su DNI")]
         public string DNI { get; set; }
         public Nullable<int> idEmpresa { get; set; }
     
