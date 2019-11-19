@@ -14,7 +14,7 @@ namespace TrabajoFinanzas.Models.DAO
 
         public void addCarro(carro obj)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 con.carroes.Add(obj);
                 con.SaveChanges();
@@ -22,7 +22,7 @@ namespace TrabajoFinanzas.Models.DAO
         }
         public void addBanco(Banco obj)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 con.Bancoes.Add(obj);
                 con.SaveChanges();
@@ -31,7 +31,7 @@ namespace TrabajoFinanzas.Models.DAO
 
         public void addEmpresa(Empresa obj)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 con.Empresas.Add(obj);
                 con.SaveChanges();
@@ -39,7 +39,7 @@ namespace TrabajoFinanzas.Models.DAO
         }
         public void EliminarCarro(int id)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 carro nuevo = new carro();
                 nuevo.idCarro = id;
@@ -50,7 +50,7 @@ namespace TrabajoFinanzas.Models.DAO
 
         public void EliminarBanco(int id)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 Banco nuevo = new Banco();
                 nuevo.idBanco = id;
@@ -61,7 +61,7 @@ namespace TrabajoFinanzas.Models.DAO
 
         public void editarCarro(carro nuevo)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 con.Entry(nuevo).State = System.Data.Entity.EntityState.Modified;
                 con.SaveChanges();
@@ -70,12 +70,12 @@ namespace TrabajoFinanzas.Models.DAO
 
         public List<Marca> MarcaCarros()
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3()) return con.Marcas.ToList();
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4()) return con.Marcas.ToList();
         }
 
         public void AddUser(Usuario ent)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 con.Usuarios.Add(ent);
                 con.SaveChanges();
@@ -84,7 +84,7 @@ namespace TrabajoFinanzas.Models.DAO
 
         public void AddBanco(Banco ent)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 con.Bancoes.Add(ent);
                 con.SaveChanges();
@@ -93,7 +93,7 @@ namespace TrabajoFinanzas.Models.DAO
 
         public void AddMarca(Marca ent)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 con.Marcas.Add(ent);
                 con.SaveChanges();
@@ -102,7 +102,7 @@ namespace TrabajoFinanzas.Models.DAO
 
         public void AddCarro(carro ent)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 con.carroes.Add(ent);
                 con.SaveChanges();
@@ -111,7 +111,7 @@ namespace TrabajoFinanzas.Models.DAO
 
         public void editarBanco(Banco nuevo)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 con.Entry(nuevo).State = System.Data.Entity.EntityState.Modified;
                 con.SaveChanges();
@@ -119,7 +119,7 @@ namespace TrabajoFinanzas.Models.DAO
         }
         public Usuario Log(string email,string pass)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 var data = (from u in con.Usuarios where u.Email == email && u.password == pass select u).ToList();
                 Usuario logeado = null;
@@ -139,7 +139,7 @@ namespace TrabajoFinanzas.Models.DAO
         }
         public Banco datosBancoXID(int id)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 var data = (from u in con.Bancoes where u.idBanco == id select u).ToList();
                 Banco banco = null;
@@ -169,7 +169,7 @@ namespace TrabajoFinanzas.Models.DAO
         //entidad Frecuencia
         public Frecuencia frecuenciaDD(String id)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 var Did = Int32.Parse(id);
                 var data = (from u in con.Frecuencias where u.idFrecuencia == Did select u).ToList();
@@ -190,19 +190,19 @@ namespace TrabajoFinanzas.Models.DAO
         
         public List<Banco> listBanco()
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3()) return con.Bancoes.ToList();
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4()) return con.Bancoes.ToList();
 
         }
         //listaCarros
         public List<carro> listCarros()
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3()) return con.carroes.ToList();
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4()) return con.carroes.ToList();
             
         }
 
         public void Registro(Usuario obj)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 con.Usuarios.Add(obj);
                 con.SaveChanges();
@@ -211,7 +211,7 @@ namespace TrabajoFinanzas.Models.DAO
 
         public Banco entBanco(int id)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
 
                 var data = (from u in con.Bancoes where u.idBanco == id select u).ToList();
@@ -243,7 +243,7 @@ namespace TrabajoFinanzas.Models.DAO
 
         public carro entCarro(int id)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 
                 var data = (from u in con.carroes where u.idCarro == id select u).ToList();
@@ -265,7 +265,7 @@ namespace TrabajoFinanzas.Models.DAO
         //entidad Carro
         public carro carroEntid(String id)
         {
-            using (bdFinanzassEntities3 con = new bdFinanzassEntities3())
+            using (bdFinanzassEntities4 con = new bdFinanzassEntities4())
             {
                 var Did = Int32.Parse(id);
                 var data = (from u in con.carroes where u.idCarro == Did select u).ToList();

@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "Resultados";
+}
+
+    <head>
+        <title>Table V04</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--===============================================================================================-->
+        <link rel="icon" type="image/png" href="~/images/icons/favicon.ico" />
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="~/css/table/util.css">
+        <link rel="stylesheet" type="text/css" href="~/css/table/main.css">
+        <!--===============================================================================================-->
+
+    </head>
+<body >
+
+
+    <div >
+        <div class="container">
+            <div class="main-bothside">
+                <form action="#" method="post">
+                    <div><div class="form-mid-w3ls"><p>I.G.V</p> </div></div>
+
+                    <div><div class="form-mid-w3ls"><p>Valor Venta</p> </div></div>
+                    <div><div class="form-mid-w3ls"><p>Monto Leasing</p> </div></div>
+                    <div><div class="form-mid-w3ls"><p>% TEP </p> </div></div>
+                    <div><div class="form-mid-w3ls"><p>N Cuotas Año:  12</p> </div></div>
+                    <div><div class="form-mid-w3ls"><p>N Total Venta</p> </div></div>
+
+
+                    <div><div class="form-mid-w3ls"><p>Seguro Riesgo</p></div></div>
+
+                    <div><div class="form-mid-w3ls"><p>Segu. contra todo Riesgo</p> </div></div>
+                    <div><div class="form-mid-w3ls"><p>Com. Periodicas</p> </div></div>
+                    <div><div class="form-mid-w3ls"><p>Recompr</p> </div></div>
+
+                    <div><div class="form-mid-w3ls"><p>Desembolso Total</p> </div></div>
+                    @*<div><div class="form-mid-w3ls"><p>TCEA Flujo Bruto:</p> </div></div>
+                        <div><div class="form-mid-w3ls"><p>TCEA Flujo Neto:</p> </div></div>
+                        <div><div class="form-mid-w3ls"><p>VAN Flujo Bruto:</p> </div></div>
+                        <div><div class="form-mid-w3ls"><p>VAN Flujo Neto:</p> </div></div>*@
+
+                </form>
+            </div>
+        </div>
+
+        <div class="container-table100">
+            <div class="wrap-table100">
+
+
+                <div class="table100 ver3 m-b-110">
+                    <div class="table100-head">
+                        <table>
+                            <thead>
+                                <tr class="row100 head">
+                                    <th class="cell100 column1">N°</th>
+                                    <th class="cell100 column2">Plazo</th>
+                                    <th class="cell100 column3">Saldo Ini.</th>-
+                                    <th class="cell100 column4">Interes</th>
+                                    <th class="cell100 column5">Cuota</th>
+                                    <th class="cell100 column6">Amortiza.</th>
+                                    <th class="cell100 column7">Seguro Riesgo</th>
+                                    <th class="cell100 column8">Comision</th>
+                                    <th class="cell100 column9">Recompra</th>-
+                                    <th class="cell100 column10">Saldo F.</th>
+                                    <th class="cell100 column11">Depre.</th>
+                                    <th class="cell100 column12">Ahorro Tri.</th>
+                                    <th class="cell100 column13">IGV</th>
+                                    <th class="cell100 column14">Flujo B.</th>
+                                    <th class="cell100 column15">Flujo I.</th>
+                                    <th class="cell100 column16">Flujo N.</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="table100-body js-pscroll">
+                        <table>
+                            <tbody class="form-mid-w3ls">
+                                
+
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+                    @using (Html.BeginForm("Index", "Resultados"))
+                    {
+                        <input type="submit" value="Resultados" />
+                    }
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--===============================================================================================-->
+    <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+
+
+    </script>
+    <!--===============================================================================================-->
+    <script src="~/js/main.js"></script>
+
+</body>
+

@@ -171,6 +171,20 @@ advertencia 6002: La tabla o vista 'bdFinanzass.dbo.nameBanco' no tiene definida
           <Property Name="wacc" Type="real" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'bdFinanzass.dbo.nameEmpresa' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="nameEmpresa">
+          <Key>
+            <PropertyRef Name="idNombre" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Prestigio" />
+            <PropertyRef Name="RUC" />
+          </Key>
+          <Property Name="idNombre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prestigio" Type="int" Nullable="false" />
+          <Property Name="RUC" Type="nvarchar" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'bdFinanzass.dbo.vwCarro' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="vwCarro">
           <Key>
@@ -391,6 +405,14 @@ advertencia 6002: La tabla o vista 'bdFinanzass.dbo.vwCarro' no tiene definida n
     [nameBanco].[ks] AS [ks], 
     [nameBanco].[wacc] AS [wacc]
     FROM [dbo].[nameBanco] AS [nameBanco]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="nameEmpresa" EntityType="Self.nameEmpresa" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [nameEmpresa].[idNombre] AS [idNombre], 
+    [nameEmpresa].[Nombre] AS [Nombre], 
+    [nameEmpresa].[Prestigio] AS [Prestigio], 
+    [nameEmpresa].[RUC] AS [RUC]
+    FROM [dbo].[nameEmpresa] AS [nameEmpresa]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vwCarro" EntityType="Self.vwCarro" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -641,6 +663,18 @@ advertencia 6002: La tabla o vista 'bdFinanzass.dbo.vwCarro' no tiene definida n
           <Property Name="ks" Type="Single" Nullable="false" />
           <Property Name="wacc" Type="Single" Nullable="false" />
         </EntityType>
+        <EntityType Name="nameEmpresa">
+          <Key>
+            <PropertyRef Name="idNombre" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Prestigio" />
+            <PropertyRef Name="RUC" />
+          </Key>
+          <Property Name="idNombre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prestigio" Type="Int32" Nullable="false" />
+          <Property Name="RUC" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="vwCarro">
           <Key>
             <PropertyRef Name="idCarro" />
@@ -797,7 +831,7 @@ advertencia 6002: La tabla o vista 'bdFinanzass.dbo.vwCarro' no tiene definida n
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="bdFinanzassEntities3" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="bdFinanzassEntities4" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Administradors" EntityType="Self.Administrador" />
           <EntitySet Name="Bancoes" EntityType="Self.Banco" />
           <EntitySet Name="Banco_Promocion" EntityType="Self.Banco_Promocion" />
@@ -812,6 +846,7 @@ advertencia 6002: La tabla o vista 'bdFinanzass.dbo.vwCarro' no tiene definida n
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
           <EntitySet Name="nameBancoes" EntityType="Self.nameBanco" />
+          <EntitySet Name="nameEmpresas" EntityType="Self.nameEmpresa" />
           <EntitySet Name="vwCarroes" EntityType="Self.vwCarro" />
           <AssociationSet Name="Administrador_Usuario" Association="Self.Administrador_Usuario">
             <End Role="Usuario" EntitySet="Usuarios" />
@@ -908,7 +943,7 @@ advertencia 6002: La tabla o vista 'bdFinanzass.dbo.vwCarro' no tiene definida n
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="bdFinanzassModelStoreContainer" CdmEntityContainer="bdFinanzassEntities3">
+        <EntityContainerMapping StorageEntityContainer="bdFinanzassModelStoreContainer" CdmEntityContainer="bdFinanzassEntities4">
           <EntitySetMapping Name="Administradors">
             <EntityTypeMapping TypeName="bdFinanzassModel.Administrador">
               <MappingFragment StoreEntitySet="Administrador">
@@ -1068,6 +1103,16 @@ advertencia 6002: La tabla o vista 'bdFinanzass.dbo.vwCarro' no tiene definida n
                 <ScalarProperty Name="PorsegRiesgo" ColumnName="PorsegRiesgo" />
                 <ScalarProperty Name="ks" ColumnName="ks" />
                 <ScalarProperty Name="wacc" ColumnName="wacc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nameEmpresas">
+            <EntityTypeMapping TypeName="bdFinanzassModel.nameEmpresa">
+              <MappingFragment StoreEntitySet="nameEmpresa">
+                <ScalarProperty Name="idNombre" ColumnName="idNombre" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Prestigio" ColumnName="Prestigio" />
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

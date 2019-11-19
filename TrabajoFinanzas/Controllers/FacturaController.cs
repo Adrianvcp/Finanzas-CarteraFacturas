@@ -10,7 +10,7 @@ namespace TrabajoFinanzas.Controllers
 {
     public class FacturaController : Controller
     {
-        bdFinanzassEntities3 ds = new bdFinanzassEntities3();
+        bdFinanzassEntities4 ds = new bdFinanzassEntities4();
         DAO dao = new DAO();
 
         // GET: Factura

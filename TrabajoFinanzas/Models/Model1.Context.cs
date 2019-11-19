@@ -15,10 +15,10 @@ namespace TrabajoFinanzas.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class bdFinanzassEntities3 : DbContext
+    public partial class bdFinanzassEntities4 : DbContext
     {
-        public bdFinanzassEntities3()
-            : base("name=bdFinanzassEntities3")
+        public bdFinanzassEntities4()
+            : base("name=bdFinanzassEntities4")
         {
         }
     
@@ -41,6 +41,7 @@ namespace TrabajoFinanzas.Models
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<nameBanco> nameBancoes { get; set; }
+        public virtual DbSet<nameEmpresa> nameEmpresas { get; set; }
         public virtual DbSet<vwCarro> vwCarroes { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

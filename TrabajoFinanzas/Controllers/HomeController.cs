@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TrabajoFinanzas.Models;
+using TrabajoFinanzas.Models.DAO;
 
 namespace TrabajoFinanzas.Controllers
 {
     public class HomeController : Controller
     {
+        DAO dao = new DAO();
+        bdFinanzassEntities4 ds = new bdFinanzassEntities4();
+
         public ActionResult Index()
         {
             return View();
@@ -30,6 +35,22 @@ namespace TrabajoFinanzas.Controllers
         {
           
             return View("About");
+        }
+
+        public ActionResult Resultados()
+        {
+
+            return View("Resultados");
+        }
+        public ActionResult Seleccion()
+        {
+            var items = ds.nameBancoes.ToList();
+            if (items != null) ViewBag.data = items;
+
+            var itemss = ds.nameEmpresas.ToList();
+            if (itemss != null) ViewBag.empresas = itemss;
+
+            return View();
         }
 
         public ActionResult Contact()

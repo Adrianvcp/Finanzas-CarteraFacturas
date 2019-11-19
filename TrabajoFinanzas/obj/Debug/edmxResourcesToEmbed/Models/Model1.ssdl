@@ -166,6 +166,20 @@ advertencia 6002: La tabla o vista 'bdFinanzass.dbo.nameBanco' no tiene definida
     <Property Name="wacc" Type="real" Nullable="false" />
   </EntityType>
   <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'bdFinanzass.dbo.nameEmpresa' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="nameEmpresa">
+    <Key>
+      <PropertyRef Name="idNombre" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Prestigio" />
+      <PropertyRef Name="RUC" />
+    </Key>
+    <Property Name="idNombre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prestigio" Type="int" Nullable="false" />
+    <Property Name="RUC" Type="nvarchar" MaxLength="11" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'bdFinanzass.dbo.vwCarro' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="vwCarro">
     <Key>
@@ -386,6 +400,14 @@ advertencia 6002: La tabla o vista 'bdFinanzass.dbo.vwCarro' no tiene definida n
     [nameBanco].[ks] AS [ks], 
     [nameBanco].[wacc] AS [wacc]
     FROM [dbo].[nameBanco] AS [nameBanco]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="nameEmpresa" EntityType="Self.nameEmpresa" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [nameEmpresa].[idNombre] AS [idNombre], 
+    [nameEmpresa].[Nombre] AS [Nombre], 
+    [nameEmpresa].[Prestigio] AS [Prestigio], 
+    [nameEmpresa].[RUC] AS [RUC]
+    FROM [dbo].[nameEmpresa] AS [nameEmpresa]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="vwCarro" EntityType="Self.vwCarro" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 

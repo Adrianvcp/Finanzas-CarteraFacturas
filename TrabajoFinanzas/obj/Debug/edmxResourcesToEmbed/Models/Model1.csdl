@@ -187,6 +187,18 @@
     <Property Name="ks" Type="Single" Nullable="false" />
     <Property Name="wacc" Type="Single" Nullable="false" />
   </EntityType>
+  <EntityType Name="nameEmpresa">
+    <Key>
+      <PropertyRef Name="idNombre" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Prestigio" />
+      <PropertyRef Name="RUC" />
+    </Key>
+    <Property Name="idNombre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Prestigio" Type="Int32" Nullable="false" />
+    <Property Name="RUC" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
   <EntityType Name="vwCarro">
     <Key>
       <PropertyRef Name="idCarro" />
@@ -343,7 +355,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="bdFinanzassEntities3" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="bdFinanzassEntities4" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Administradors" EntityType="Self.Administrador" />
     <EntitySet Name="Bancoes" EntityType="Self.Banco" />
     <EntitySet Name="Banco_Promocion" EntityType="Self.Banco_Promocion" />
@@ -358,6 +370,7 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
     <EntitySet Name="nameBancoes" EntityType="Self.nameBanco" />
+    <EntitySet Name="nameEmpresas" EntityType="Self.nameEmpresa" />
     <EntitySet Name="vwCarroes" EntityType="Self.vwCarro" />
     <AssociationSet Name="Administrador_Usuario" Association="Self.Administrador_Usuario">
       <End Role="Usuario" EntitySet="Usuarios" />

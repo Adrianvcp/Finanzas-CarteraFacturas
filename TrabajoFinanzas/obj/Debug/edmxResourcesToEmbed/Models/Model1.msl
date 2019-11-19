@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="bdFinanzassModelStoreContainer" CdmEntityContainer="bdFinanzassEntities3">
+  <EntityContainerMapping StorageEntityContainer="bdFinanzassModelStoreContainer" CdmEntityContainer="bdFinanzassEntities4">
     <EntitySetMapping Name="Administradors">
       <EntityTypeMapping TypeName="bdFinanzassModel.Administrador">
         <MappingFragment StoreEntitySet="Administrador">
@@ -160,6 +160,16 @@
           <ScalarProperty Name="PorsegRiesgo" ColumnName="PorsegRiesgo" />
           <ScalarProperty Name="ks" ColumnName="ks" />
           <ScalarProperty Name="wacc" ColumnName="wacc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nameEmpresas">
+      <EntityTypeMapping TypeName="bdFinanzassModel.nameEmpresa">
+        <MappingFragment StoreEntitySet="nameEmpresa">
+          <ScalarProperty Name="idNombre" ColumnName="idNombre" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Prestigio" ColumnName="Prestigio" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

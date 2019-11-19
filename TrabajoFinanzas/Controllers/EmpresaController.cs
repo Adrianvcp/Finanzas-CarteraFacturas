@@ -32,21 +32,6 @@ namespace TrabajoFinanzas.Controllers
             return View();
         }
 
-        // POST: Empresa/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
         // GET: Empresa/Edit/5
         public ActionResult Edit(int id)
@@ -70,7 +55,7 @@ namespace TrabajoFinanzas.Controllers
             }
         }
 
-        // POST: Registro/Create
+        // POST: Empresa/Create
         [HttpPost]
         public ActionResult Create(String name, String ruc, String prestigio)
         {
@@ -80,6 +65,7 @@ namespace TrabajoFinanzas.Controllers
                 Empresa obj = new Empresa();
                 obj.Nombre = name;
                 obj.RUC = ruc;
+                
                 obj.Prestigio = Convert.ToInt32(prestigio);
 
                 dao.addEmpresa(obj);

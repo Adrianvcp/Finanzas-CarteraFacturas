@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Seleccion";
+}
+
+<section class="blog-area ptb-140 bg-1">
+        
+    @using (Html.BeginForm("Index", "Factura"))
+     {
+        <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12 col">
+                        <div class="blog-wrap mb-30">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <div>
+                                        <div class="form-mid-w3ls">
+                                            <p>Entidad Financiera</p>
+                                            @Html.DropDownList("NombreBando", new SelectList(ViewBag.data, "idBanco", "NombreBanco"), new { @class = "service-wrap cont-submit btn-contact btn-style" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xs-12 col">
+                        <div class="blog-wrap mb-30">
+
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <div>
+                                        <div class="form-mid-w3ls">
+                                            <p>Entidad Financiera</p>
+                                            @Html.DropDownList("NombreBando", new SelectList(ViewBag.empresas, "RUC", "Nombre"), new { @class = "service-wrap cont-submit btn-contact btn-style" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="container text-center btn-contact btn-style" href="@Url.Action("Index", "Factura")">Continuar</a>
+
+        </div>
+     }
+
+</section>

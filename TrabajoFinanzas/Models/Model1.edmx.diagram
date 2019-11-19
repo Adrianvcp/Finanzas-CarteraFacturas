@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1fa3a4e0597d46fd8079d6881ea4d013" Name="Diagram1">
+      <Diagram DiagramId="82ec21424fe64b5e9ccf6ce7d0e08684" Name="Diagram1">
         <EntityTypeShape EntityType="bdFinanzassModel.Administrador" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="bdFinanzassModel.Banco" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="bdFinanzassModel.Banco_Promocion" Width="1.5" PointX="9.75" PointY="5.125" IsExpanded="true" />
@@ -19,7 +19,8 @@
         <EntityTypeShape EntityType="bdFinanzassModel.sysdiagram" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="bdFinanzassModel.Usuario" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="bdFinanzassModel.nameBanco" Width="1.5" PointX="2.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdFinanzassModel.vwCarro" Width="1.5" PointX="9.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.nameEmpresa" Width="1.5" PointX="9.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdFinanzassModel.vwCarro" Width="1.5" PointX="4.75" PointY="11.5" IsExpanded="true" />
         <AssociationConnector Association="bdFinanzassModel.Administrador_Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="bdFinanzassModel.Banco_Administrador" ManuallyRouted="false" />
         <AssociationConnector Association="bdFinanzassModel.Banco_Promocion_Banco" ManuallyRouted="false" />

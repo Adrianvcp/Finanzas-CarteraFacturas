@@ -123,7 +123,7 @@ iframe {
 }
 
 .tm-dark-bg { 
-    background-color: #1d1d1d;
+    background-color: #fff;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -181,19 +181,18 @@ iframe {
 }
 
 .container-table100 {
-  width: 100%;
-  min-height: 100vh;
-  background: #1d1d1d;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 33px 30px;
+    width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 33px 30px;
 }
 
 .wrap-table100 {
@@ -579,10 +578,10 @@ max-width: 100%;
 /*end reset*/
 html,
 body {
-padding: 0;
-margin: 0;
-background: #fff;
-font-family: 'Barlow', sans-serif;
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+    font-family: 'Barlow', sans-serif;
 }
 body a {
 transition: 0.5s all;
@@ -671,7 +670,7 @@ color: #fff;
 
 .fondo-negro{
     background:none;
-    background-color: #1d1d1d;
+    background-color: #ffff;
 }
 
 .form-group{
