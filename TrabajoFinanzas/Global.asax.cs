@@ -14,7 +14,7 @@ namespace TrabajoFinanzas
         //leasing ls = new leasing();
 
 
-        double[] arrayCS;
+        //double[] arrayCS;
 
         protected void Application_Start()
         {
@@ -34,8 +34,9 @@ namespace TrabajoFinanzas
             //Session["datosPlanPago"] = ls;
             Session["plazoGracia"] = 0;
 
-            Session["DatosPlanPago"] = arrayCS;
-            Session["DatosFlujoNeto"] = arrayCS;
+
+            //Session["DatosPlanPago"] = arrayCS;
+            //Session["DatosFlujoNeto"] = arrayCS;
             Session["frecuencia"] = 0;
             Session["frDias"] = 0;
         }

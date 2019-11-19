@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -60,30 +61,27 @@ namespace TrabajoFinanzas.Controllers
 
         // POST: Login/Simulador/5
         [HttpPost]
-        public ActionResult Simulador(String NombreBando, String diasAnio, String fr, String tea, String fechaDescuento, String tipoMoneda,String fechaEmision,String fechaPago,String totalFacturado)
+        public ActionResult Resultado(String diasAnio, String fr, String tea, String fechaDescuento, String tipoMoneda, String fechaEmision, String fechaPago, String totalFacturado)
         {
             try
             {
-                // TODO: Add delete logic here
-                leasing ls = new leasing();
-                ls.idBanco = Int32.Parse(NombreBando);
-                ls.Banco = dao.datosBancoXID(Int32.Parse(NombreBando));
                 
-                //var numero = dao.carroEntid(carro).Precio;
-                ls.NprevioVenta = float.Parse(totalFacturado);
+                var dat = (1 + (Convert.ToInt32(tea) / 100));
+                DateTime fechaP = DateTime.ParseExact(fechaPago, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                DateTime fechaD = DateTime.ParseExact(fechaDescuento, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-                ls.idFrecuencia = dao.frecuenciaDD(fr).idFrecuencia;
-                //ls.idCarro = dao.carroEntid(carro).idCarro;
-                //ls.NAnios = Int32.Parse(anios);
-                ls.Frecuencia = dao.frecuenciaDD(fr);
+                var a = fechaD - fechaP;
+                int differenceInDays = a.Days;
+                /*
+                double teporc = Math.Pow(dat,(differenceInDays/Convert.ToInt32(diasAnio)))  - 1;
+                ViewBag.teporc = teporc*100;
+                //*100
 
-                //Session["plazoGracia"] = Int32.Parse(CantCu);
-                //Session["tipoGracia"] = (String)pl;
+                var dporc = (teporc / (1 + teporc));
+                ViewBag.dporc = dporc * 100;
+                */
 
-                Session["datosPlanPago"] = ls;
-                //var prestamo = float.Parse(pv) - (int.Parse(ci) * 0.01 * int.Parse(pv));
-
-                return RedirectToAction("Index", "PlanDePagos");
+                return RedirectToAction("Resultado", "Factura");
             }
             catch
             {

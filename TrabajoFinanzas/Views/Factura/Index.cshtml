@@ -6,7 +6,7 @@
 }
 
 
-@using (Html.BeginForm("Simulador", "Factura"))
+@using (Html.BeginForm("Resultado", "Factura"))
 {
     <div class="container">
         <div class="main-bothside">
@@ -39,7 +39,8 @@
                                         <div>
                                             <div class="form-mid-w3ls">
                                                 <p>Tasa Efectiva(falta agregar aca pero si lo utiliza)</p>
-                                                @Html.Label("tea", "dsfs", new { @placeholder = "2%" })
+                                                @Html.TextBox("tea", "", new { @placeholder = "Ingresa en porcentaje" })
+                                                
                                             </div>
                                         </div>
 

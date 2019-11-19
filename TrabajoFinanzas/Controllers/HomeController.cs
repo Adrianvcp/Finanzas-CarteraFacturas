@@ -37,10 +37,35 @@ namespace TrabajoFinanzas.Controllers
             return View("About");
         }
 
-        public ActionResult Resultados()
+        public ActionResult Resultados(String NombreBando, String diasAnio, String fr)
         {
+            try
+            {
+                // TODO: Add delete logic here
+                leasing ls = new leasing();
+                ls.idBanco = Int32.Parse(NombreBando);
+                ls.Banco = dao.datosBancoXID(Int32.Parse(NombreBando));
 
-            return View("Resultados");
+                //var numero = dao.carroEntid(carro).Precio;
+                //ls.NprevioVenta = float.Parse(totalFacturado);
+
+                ls.idFrecuencia = dao.frecuenciaDD(fr).idFrecuencia;
+                //ls.idCarro = dao.carroEntid(carro).idCarro;
+                //ls.NAnios = Int32.Parse(anios);
+                ls.Frecuencia = dao.frecuenciaDD(fr);
+
+                //Session["plazoGracia"] = Int32.Parse(CantCu);
+                //Session["tipoGracia"] = (String)pl;
+
+                Session["datosPlanPago"] = ls;
+                //var prestamo = float.Parse(pv) - (int.Parse(ci) * 0.01 * int.Parse(pv));
+
+                return RedirectToAction("Index", "PlanDePagos");
+            }
+            catch
+            {
+                return View();
+            }
         }
         public ActionResult Seleccion()
         {
